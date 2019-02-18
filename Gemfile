@@ -8,6 +8,7 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'api-versions', '~> 1.2', '>= 1.2.1'
 gem 'state_machines-activerecord'
+gem 'active_model_serializers', '~> 0.9.3'
 gem 'rack-cors'
 gem 'rswag'
 
@@ -19,7 +20,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_bot', '~> 4.8', '>= 4.8.2'
+  gem 'factory_bot_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

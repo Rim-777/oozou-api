@@ -4,7 +4,7 @@ class CreateContents < ActiveRecord::Migration[5.2]
       t.integer :author_id, index: true, foreign_key: true
       t.string :title
       t.datetime :published_date
-      t.string :summary
+      t.text :summary
       t.text :content
       t.string :status, index: true, default: 'draft'
       t.timestamps
