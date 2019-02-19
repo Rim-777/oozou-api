@@ -8,7 +8,7 @@ describe 'Contents API' do
           :content, 2,
           author: author,
           title: 'Some Title',
-          published_date: '01.01.2018',
+          published_at: '01.01.2018',
           summary: 'Some Summary',
           content: 'Some Content',
           status: 'published'
@@ -21,21 +21,30 @@ describe 'Contents API' do
       }
     end
 
-    let(:response_item) do
-      {
-          author: {
-              name: 'Some Name',
-          },
-          title: 'Some Title',
-          content: 'Some Content',
-          published_date: '2018-01-01T00:00:00.000Z',
-          summary: 'Some Summary',
-      }
+    let(:expected_response) do
+      [
+          {
+              'author' => {
+                  'name' => 'Some Name',
+              },
+              'title' => 'Some Title',
+              'content' => 'Some Content',
+              'published_at' => '2018-01-01T00:00:00.000Z',
+              'summary' => 'Some Summary',
+          }, {
+              'author' => {
+                  'name' => 'Some Name',
+              },
+              'title' => 'Some Title',
+              'content' => 'Some Content',
+              'published_at' => '2018-01-01T00:00:00.000Z',
+              'summary' => 'Some Summary',
+          }
+      ]
+
     end
 
-    let(:request) {get '/api/contents', params: {}, headers: headers, xhr: true}
-
-    before {request}
+    before {get '/api/contents', params: {}, headers: headers, xhr: true}
 
     it 'returns status :ok' do
       expect(response).to be_success
@@ -46,9 +55,7 @@ describe 'Contents API' do
     end
 
     it 'responses with an expected content' do
-      JSON.parse(response.body).each do |content|
-        expect(content.deep_symbolize_keys).to eq response_item
-      end
+      expect(JSON.parse(response.body)).to eq expected_response
     end
   end
 end

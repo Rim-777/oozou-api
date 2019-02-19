@@ -11,6 +11,7 @@ gem 'state_machines-activerecord'
 gem 'active_model_serializers', '~> 0.9.3'
 gem 'responders', '~> 2.3'
 gem 'rack-cors'
+gem 'sidekiq', '~> 5.0', '>= 5.0.5'
 gem 'rswag'
 
 group :development do
