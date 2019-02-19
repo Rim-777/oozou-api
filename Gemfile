@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'api-versions', '~> 1.2', '>= 1.2.1'
 gem 'state_machines-activerecord'
 gem 'active_model_serializers', '~> 0.9.3'
+gem 'responders', '~> 2.3'
 gem 'rack-cors'
 gem 'rswag'
 
@@ -27,7 +28,7 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'json_spec'
-  gem "json_matchers"
+  gem 'json_matchers', '~> 0.10.0'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

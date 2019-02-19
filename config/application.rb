@@ -14,6 +14,9 @@ Bundler.require(*Rails.groups)
 
 module OozouApi
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     config.load_defaults 5.2
     config.api_only = true
 
