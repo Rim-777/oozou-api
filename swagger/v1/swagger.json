@@ -1,0 +1,51 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/contents": {
+      "get": {
+        "summary": "gets a list of published contents",
+        "tags": [
+          "Contents"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml",
+          "application/html"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns a content list",
+            "examples": {
+              "application/json": [
+                {
+                  "author": {
+                    "name": "Some Name 1"
+                  },
+                  "title": "Some Title 1",
+                  "published_at": "2019-02-19 20:48:52 UTC",
+                  "summary": "Some Summary 1",
+                  "content": "Some Content 2",
+                  "status": "published"
+                },
+                {
+                  "author": {
+                    "name": "Some Name 2"
+                  },
+                  "title": "Some Title 2",
+                  "published_at": "2019-02-18 20:48:52 UTC",
+                  "summary": "Some Summary 2",
+                  "content": "Some Content 2",
+                  "status": "published"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
