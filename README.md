@@ -1,24 +1,58 @@
-# README
+## Content Api
+Ruby Rails application for REST API with ActiveRecord, RSpec, Swagger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Dependencies:
+- Ruby 5.2.2
+- PostgreSQL
+- Redis
 
-Things you may want to cover:
+### Installation:
+- Clone poject
+- Run bundler:
 
-* Ruby version
+ ```shell
+ $ bundle install
+ ```
+- Create database.yml:
+```shell
+$ cp config/database.yml.sample config/database.yml
+```
+- Fill the database:
+```shell
+ $ bundle exec rake db:seed
+```
+- Run application:
 
-* System dependencies
+ ```shell
+ $ rails server
+ ```
+- Run Redis server (in another terminal window):
 
-* Configuration
+ ```shell
+ $ redis-server
+ ```
+- Run background engine (in another terminal window):
+ 
+```shell
+$ sidekiq
+ ```
+ 
+##### Tests:
 
-* Database creation
+To execute tests, run following commands:
+ 
+```shell
+ $ bundle exec rake db:migrate RAILS_ENV=test #(the first time only)
+ $ bundle exec rspec
+```
+### Swagger Documentation
 
-* Database initialization
+Enter the root application address in the browser:
 
-* How to run the test suite
+```shell
+http://localhost:3000/api-docs
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### License
 
-* Deployment instructions
-
-* ...
+The software is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

@@ -1,9 +1,9 @@
 class Content < ApplicationRecord
   validates :title,
-            :published_at,
             :summary,
             :content,
             :status,
+            :published_at,
             presence: true
 
   belongs_to :author, inverse_of: :contents
